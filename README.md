@@ -30,12 +30,19 @@
             <div id="wrap">
                 <div id="text">
                     <div id="code">
-                      <span class="say"> Happiest Birthday  </span><br>
-                      <span class="say">My Beautiful🫀 </span><br>             
-                      <span class="say">My little panda🐼</span><br>
-                      <span class="say">MY LOVE💗💓</span><br>
+                       <span class="say">My favourite Ritu🤩</span><br>
+                      <span class="say">My Beautiful golu-molu🫀 </span><br>             
+                      <span class="say">My little panda 🐼</span><br>
+                      <span class="say">My Best Friend Forever💖</span><br>
                       <span class="say">UR MY CLOSEST EVER🫶</span><br>
-                      <span class="say">Your Bunny </span><br>
+                      <span class="say">You're my blessing from the universe, 
+                      <span class="say">my proof that miracles do happen.</span><br> 
+                      <span class="say">I'll always be grateful for the day I found you,</span><br> 
+                      <span class="say">  and even more grateful that you stayed.</span><br>
+                      <span class="say"> Today is all about celebrating you,</span><br>
+                      <span class="say"> the beautiful soul that makes every day</span><br>
+                      <span class="say">so much brighter. Have the most</span><br>
+                      <span class="say"> amazing birthday-you deserve nothing less!</span><br>
                       <span class="say"><span class="space"></span></span> </font>
                           <br />
                           <br />
