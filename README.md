@@ -1,225 +1,105 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <title>HBD love </title>            
-        <link type="text/css" rel="stylesheet" href="./file/default.css">
-                <script type="text/javascript" src="./file/jquery.min.js"></script>
-                <script type="text/javascript" src="./file/jscex.min.js"></script>
-                <script type="text/javascript" src="./file/jscex-parser.js"></script>
-                <script type="text/javascript" src="./file/jscex-jit.js"></script>
-                <script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
-                <script type="text/javascript" src="./file/jscex-async.min.js"></script>
-                <script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
-                <script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
-                <script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
-        <script>
-            function playAudio() {
-                var audio = document.getElementById("myAudio");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HBD Love</title>
+    <link rel="stylesheet" href="./file/default.css" type="text/css">
+
+    <!-- JavaScript Files -->
+    <script src="./file/jquery.min.js"></script>
+    <script src="./file/jscex.min.js"></script>
+    <script src="./file/jscex-async.min.js"></script>
+    <script src="./file/jscex-parser.js"></script>
+    <script src="./file/jscex-jquery.min.js"></script>
+    <script src="./file/jscex-builderbase.min.js"></script>
+    <script src="./file/jscex-async-powerpack.min.js"></script>
+    <script src="./file/love.js" charset="utf-8"></script>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            if (audio) {
                 audio.play();
             }
-        </script>
-            <style type="text/css">
-        </style>
+        }
+    </script>
 </head>
-    <body>
-        <div id="main">
-            <div id="error">，<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>(<a href="http://firefox.com.cn/download/">Firefox</a>)</div>
-            <audio autoplay="autoplay" height="100" width="100" id = "myAudio">
-                    <source src="aud.mp3" type="audio/mp3" />
-                    <embed height="100" width="100" src="aud.mp3" />
-            </audio>
-            <div id="wrap">
-                <div id="text">
-                    <div id="code">
-                       <span class="say">My favourite Ritu🤩</span><br>
-                      <span class="say">My Beautiful golu-molu🫀 </span><br>             
-                      <span class="say">My little panda 🐼</span><br>
-                      <span class="say">My Best Friend Forever💖</span><br>
-                      <span class="say">UR MY CLOSEST EVER🫶</span><br>
-                      <span class="say">You're my blessing from the universe, 
-                      <span class="say">my proof that miracles do happen.</span><br> 
-                      <span class="say">I'll always be grateful for the day I found you,</span><br> 
-                      <span class="say">  and even more grateful that you stayed.</span><br>
-                      <span class="say"> Today is all about celebrating you,</span><br>
-                      <span class="say"> the beautiful soul that makes every day</span><br>
-                      <span class="say">so much brighter. Have the most</span><br>
-                      <span class="say"> amazing birthday-you deserve nothing less!</span><br>
-                      <span class="say"><span class="space"></span></span> </font>
-                          <br />
-                          <br />
-                      </p>
-                    </div>
-                  </div>
+<body>
 
-                  <div id = "message-box"></div>
-                <div id="clock-box">
-                    <span class="STYLE1"></span><font color="#33CC00"></font>
-<span class="STYLE1"></span>
-                  <div id="clock"></div>
-              </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
-            </div>
-
+    <div id="main">
+        <div id="error">
+            <a href="http://www.google.cn/chrome/">Chrome</a> /
+            <a href="http://firefox.com.cn/download/">Firefox</a>
         </div>
 
+        <audio autoplay id="myAudio">
+            <source src="aud.mp3" type="audio/mp3">
+            <embed height="100" width="100" src="aud.mp3">
+        </audio>
+
+        <div id="wrap">
+            <div id="text">
+                <div id="code">
+                    <span class="say">My favourite Ritu 🥰</span><br>
+                    <span class="say">My Beautiful golu-molu 🥰</span><br>
+                    <span class="say">My little panda 🐼</span><br>
+                    <span class="say">My Best Friend Forever 🥰</span><br>
+                    <span class="say">You're MY CLOSEST EVER ❤️</span><br>
+                    <span class="say">You’re my blessing from the universe.</span><br>
+                    <span class="say">I believe that miracles do happen. 🥺</span><br>
+                    <span class="say">I’ll always be grateful for the day I found you. ❤️</span><br>
+                    <span class="say">You have a heart that is truly gold. ❤️</span><br>
+                    <span class="say">Thank you for being the best part of my life. 🥰</span><br>
+                </div>
+            </div>
+
+            <div id="message-box"></div>
+            <div id="clock-box">
+                <span class="STYLE1">❤️</span>
+                <div id="clock"></div>
+                <canvas id="canvas" width="1100" height="680"></canvas>
+            </div>
+        </div>
+    </div>
+
     <script>
+        (function() {
+            var canvas = document.getElementById("canvas");
+
+            if (!canvas || !canvas.getContext) {
+                document.getElementById("error").style.display = "block";
+                return false;
+            }
+
+            var ctx = canvas.getContext("2d");
+            var width = canvas.width;
+            var height = canvas.height;
+
+            function drawHeart(x, y, size, color) {
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.bezierCurveTo(x - size, y - size, x - size * 2, y + size, x, y + size * 2);
+                ctx.bezierCurveTo(x + size * 2, y + size, x + size, y - size, x, y);
+                ctx.fill();
+            }
+
+            function animateHearts() {
+                ctx.clearRect(0, 0, width, height);
+                for (var i = 0; i < 10; i++) {
+                    var x = Math.random() * width;
+                    var y = Math.random() * height;
+                    var size = Math.random() * 30 + 10;
+                    var colors = ["#FF0000", "#FF1493", "#DC143C", "#C71585"];
+                    var color = colors[Math.floor(Math.random() * colors.length)];
+                    drawHeart(x, y, size, color);
+                }
+                requestAnimationFrame(animateHearts);
+            }
+
+            animateHearts();
+        })();
     </script>
 
-    <script>
-    (function(){
-        var canvas = $('#canvas');
-
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;        }
-
-        var width = canvas.width();
-        var height = canvas.height();        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
-            }
-        }
-
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
-
-        canvas.click(function(e) {
-            playAudio();
-            console.log("Helloworld!");
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
-
-
-
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
-            }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-        }));
-
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-                    tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
-
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-                    tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
-
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
-            }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
-
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
-
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
-        }));
-
-        var textAnimate = eval(Jscex.compile("async", function () {
-                    var together = new Date();
-                    together.setFullYear(2002, 25, 1);                         
-                    together.setHours(20);                                                
-                    together.setMinutes(0);                                        
-                    together.setSeconds(0);                                        
-                    together.setMilliseconds(2);                                
-
-                    $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
-
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
-
-            textAnimate().start();
-
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
-    })();
-    </script></body></html>1
+</body>
+</html>
