@@ -1,86 +1,91 @@
+/* Define global variables for easy customization */
+:root {
+    --primary-font: sans-serif;
+    --primary-color: white;
+    --secondary-color: rgb(196, 255, 255);
+    --font-small: 14px;
+    --font-medium: 18px;
+    --font-large: 28px;
+    --font-extra-large: 64px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  background-image: url('../img2.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-size: 14px;
-  font-family: sans-serif;
-  color: white;
-  overflow: auto;
+    font-family: var(--primary-font);
+    font-size: var(--font-small);
+    color: var(--primary-color);
+    background: url('../images/img2.png') no-repeat center center/cover;
 }
+
 a {
-  color: white;
-  font-size: 14px;
+    color: var(--primary-color);
+    font-size: 14px;
 }
+
 #main {
-  width: 100%;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    width: 1100px;
+    height: 660px;
+    margin-top: 10px;
 }
-#wrap {
-  position: relative;
-  margin: 0 auto;
-  width: 1100px;
-  height: 680px;
-  margin-top: 10px;
-}
+
 #text {
-  width: 272px;
-  height: 560px;
-  left: 188px;
-  top: 80px;
-  position: absolute;
+    width: 272px;
+    height: 560px;
+    position: absolute;
+    left: 188px;
+    top: 80px;
 }
+
 #code {
-  display: none;
-  color: rgb(196, 255, 255);
-  font-size: 16px;
-  margin-top: 70px;
-  line-height: 25px;
-  font-size: larger;
-  font-weight: bolder;
+    display: none;
+    color: var(--secondary-color);
+    font-size: var(--font-medium);
+    margin-top: 70px;
+    line-height: 25px;
+    font-weight: bold;
 }
+
 #clock-box {
-  position: absolute;
-  left: 60px;
-  top: 550px;
-  font-size: 28px;
-  display: none;
+    position: absolute;
+    left: 600px;
+    top: 550px;
+    display: none;
 }
+
 #clock-box a {
-  font-size: 28px;
-  text-decoration: none;
+    font-size: var(--font-large);
+    text-decoration: none;
 }
-#clock {
-  margin-left: 48px;
-}
+
 #clock .digit {
-  font-size: 64px;
+    font-size: var(--font-extra-large);
+    margin-left: 48px;
 }
+
 #canvas {
-  margin: 0 auto;
-  width: 1100px;
-  height: 680px;
+    margin: auto;
+    width: 1100px;
+    height: 660px;
 }
+
 #error {
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 60px;
-  display: none;
-}
-.hand {
-  cursor: pointer;
-}
-.say {
-  margin-left: 5px;
-}
-.space {
-  margin-right: 150px;
+    margin: auto;
+    text-align: center;
+    margin-top: 60px;
+    display: none;
 }
 
-#message-box{
-  position: absolute;
-  margin-top:450px;
-  font-size: 25px;
-  font-family: monospace;
-
+#message-box {
+    position: absolute;
+    margin-top: 450px;
+    font-size: 25px;
+    font-family: monospace;
 }
